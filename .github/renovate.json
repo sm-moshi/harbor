@@ -15,10 +15,14 @@
   "prHourlyLimit": 5,
   "prConcurrentLimit": 3,
   "enabledManagers": [
-    "gomod",
     "dockerfile",
-    "github-actions",
     "woodpecker"
+  ],
+  "ignorePaths": [
+    "make/photon/**",
+    "src/portal/**",
+    "tools/**",
+    ".github/workflows/**"
   ],
   "labels": [
     "dependencies"
@@ -26,21 +30,22 @@
   "pinDigests": false,
   "packageRules": [
     {
-      "matchManagers": ["gomod"],
-      "addLabels": ["go"]
+      "matchManagers": [
+        "dockerfile",
+        "woodpecker"
+      ],
+      "addLabels": [
+        "docker"
+      ]
     },
     {
-      "matchManagers": ["dockerfile", "woodpecker"],
-      "addLabels": ["docker"]
-    },
-    {
-      "matchManagers": ["github-actions"],
-      "addLabels": ["ci"]
-    },
-    {
-      "description": "Ignore distroless — GCR token exchange unsupported by hosted Renovate",
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["/^gcr\\.io\\/distroless\\//"],
+      "description": "Ignore distroless \u2014 GCR token exchange unsupported by hosted Renovate",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "/^gcr\\.io\\/distroless\\//"
+      ],
       "enabled": false
     }
   ]
