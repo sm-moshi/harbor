@@ -1,0 +1,52 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:best-practices",
+    ":preserveSemverRanges"
+  ],
+  "platformAutomerge": false,
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true,
+  "dependencyDashboardAutoclose": true,
+  "timezone": "Europe/Berlin",
+  "schedule": [
+    "at any time"
+  ],
+  "prHourlyLimit": 5,
+  "prConcurrentLimit": 3,
+  "enabledManagers": [
+    "dockerfile",
+    "woodpecker"
+  ],
+  "ignorePaths": [
+    "make/photon/**",
+    "src/portal/**",
+    "tools/**",
+    ".github/workflows/**"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "pinDigests": false,
+  "packageRules": [
+    {
+      "matchManagers": [
+        "dockerfile",
+        "woodpecker"
+      ],
+      "addLabels": [
+        "docker"
+      ]
+    },
+    {
+      "description": "Ignore distroless \u2014 GCR token exchange unsupported by hosted Renovate",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "/^gcr\\.io\\/distroless\\//"
+      ],
+      "enabled": false
+    }
+  ]
+}
