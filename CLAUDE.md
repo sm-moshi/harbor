@@ -14,8 +14,8 @@ harbor-helm wrapper chart.
 - **Rebase on upstream, don't diverge.** All changes should be cherry-picks from upstream PRs
   or minimal fixes that can be upstreamed. Avoid custom features that make rebasing harder.
 - **`main` stays synced with upstream** — never commit directly to `main`.
-  `sm-moshi/v2.15` is the patched branch for the v2.15 series.
-- **Version scheme:** `VERSION` file is set to `v2.15.0-rc2-smN` (e.g. `-sm1`, `-sm2`).
+  `sm-moshi/v2.15` is the patched branch for the v2.15 series (rebased onto v2.15.0 GA).
+- **Version scheme:** `VERSION` file is set to `v2.15.0-smN` (e.g. `-sm1`, `-sm2`).
   Tags follow the same pattern. Bump the `-smN` suffix for each batch of cherry-picks.
 - **No secrets or credentials** in this repo.
 - **Only build Go components** that are affected by cherry-picked fixes. Components without
@@ -69,19 +69,19 @@ cd src && staticcheck $(go list ./... | grep -v '\.pb\.go')
 docker build -f build/docker/Dockerfile.core -t harbor-core-test .
 ```
 
-## Cherry-picked PRs (v2.15.0-rc2-sm1)
+## Cherry-picked PRs (v2.15.0-sm1)
 
 | PR | Title | Status |
 |----|-------|--------|
-| #22637 | Fix broken migration in 0180_2.15.0 schema | Open |
 | #22679 | Fix Redis errors treated as rate-limit 429 | Open |
 | #22572 | Distributed lock for execution status refresh | Open |
 | #22556 | Disallow empty robot_name_prefix (OIDC fix) | Open |
 | #22871 | Validate redirect URIs (open redirect fix) | Open |
 | #22994 | Fix full table scan in blob GC (4min to 40ms) | Open |
 
-Skipped:
-- #22879 (audit log redaction) — not applicable to v2.15.0-rc2 base; superseded by #22913
+Dropped (merged upstream in v2.15.0 GA):
+- #22637 (schema migration fix) — superseded by #22999 in v2.15.0
+- #22879 (audit log redaction) — superseded by #22913 (merged upstream)
 
 ## CI/CD
 
