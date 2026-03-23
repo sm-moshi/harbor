@@ -1,2 +1,2 @@
-FROM busybox:1.26
+FROM busybox:1.37@sha256:b3255e7dfbcd10cb367af0d409747d511aeb66dfac98cf30e97e87e4207dd76f
 RUN /bin/dd if=/dev/urandom of=file10mb bs=10485760 count=1
