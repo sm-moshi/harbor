@@ -143,7 +143,7 @@ steps:
   # ── Trivy scan (all 4 images) ───────────────────────────────
   - name: trivy-scan-core
     failure: ignore
-    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:5cb00cdc8470abcc76030811ab556dd4d1a3951c76b7295f52c0f837aca1688e"
+    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:05d156ed209f71500ed886b8e07b6ffb1e74025cf7fba287ab6869ab74bfd846"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-core:${CI_COMMIT_TAG}"
       TRIVY_USERNAME:
@@ -156,7 +156,7 @@ steps:
 
   - name: trivy-scan-jobservice
     failure: ignore
-    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:5cb00cdc8470abcc76030811ab556dd4d1a3951c76b7295f52c0f837aca1688e"
+    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:05d156ed209f71500ed886b8e07b6ffb1e74025cf7fba287ab6869ab74bfd846"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-jobservice:${CI_COMMIT_TAG}"
       TRIVY_USERNAME:
@@ -169,7 +169,7 @@ steps:
 
   - name: trivy-scan-registryctl
     failure: ignore
-    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:5cb00cdc8470abcc76030811ab556dd4d1a3951c76b7295f52c0f837aca1688e"
+    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:05d156ed209f71500ed886b8e07b6ffb1e74025cf7fba287ab6869ab74bfd846"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-registryctl:${CI_COMMIT_TAG}"
       TRIVY_USERNAME:
@@ -182,7 +182,7 @@ steps:
 
   - name: trivy-scan-exporter
     failure: ignore
-    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:5cb00cdc8470abcc76030811ab556dd4d1a3951c76b7295f52c0f837aca1688e"
+    image: "dhi.io/trivy:0.69.3-debian13-dev@sha256:05d156ed209f71500ed886b8e07b6ffb1e74025cf7fba287ab6869ab74bfd846"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-exporter:${CI_COMMIT_TAG}"
       TRIVY_USERNAME:
@@ -195,7 +195,7 @@ steps:
 
   # ── Cosign sign (all 4 images) ──────────────────────────────
   - name: cosign-sign-core
-    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:75d08035bfa25d496c7de3990500f375b314de3d75e6094b6ed19d37a7b9b080"
+    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:1bce5437c37a65eae37b72a73e7fcf45707890f9bd36da91613f3185697ec17a"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-core:${CI_COMMIT_TAG}"
       COSIGN_EXPERIMENTAL: "1"
@@ -214,7 +214,7 @@ steps:
       - rm -f /tmp/cosign.key
 
   - name: cosign-sign-jobservice
-    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:75d08035bfa25d496c7de3990500f375b314de3d75e6094b6ed19d37a7b9b080"
+    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:1bce5437c37a65eae37b72a73e7fcf45707890f9bd36da91613f3185697ec17a"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-jobservice:${CI_COMMIT_TAG}"
       COSIGN_EXPERIMENTAL: "1"
@@ -233,7 +233,7 @@ steps:
       - rm -f /tmp/cosign.key
 
   - name: cosign-sign-registryctl
-    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:75d08035bfa25d496c7de3990500f375b314de3d75e6094b6ed19d37a7b9b080"
+    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:1bce5437c37a65eae37b72a73e7fcf45707890f9bd36da91613f3185697ec17a"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-registryctl:${CI_COMMIT_TAG}"
       COSIGN_EXPERIMENTAL: "1"
@@ -252,7 +252,7 @@ steps:
       - rm -f /tmp/cosign.key
 
   - name: cosign-sign-exporter
-    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:75d08035bfa25d496c7de3990500f375b314de3d75e6094b6ed19d37a7b9b080"
+    image: "dhi.io/cosign:3.0.5-debian13-dev@sha256:1bce5437c37a65eae37b72a73e7fcf45707890f9bd36da91613f3185697ec17a"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-exporter:${CI_COMMIT_TAG}"
       COSIGN_EXPERIMENTAL: "1"
@@ -272,7 +272,7 @@ steps:
 
   # ── Notation sign (all 4 images) ────────────────────────────
   - name: notation-sign-core
-    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:1837c85a13e06ab2fc739e4c760df9dd630ad8d97b8951e8f08c0abcf682862d"
+    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:4d6c7ac4a8be8b8dc63717c39edcd930500bef455599a97135267518492793bf"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-core:${CI_COMMIT_TAG}"
       NOTATION_KEY:
@@ -296,7 +296,7 @@ steps:
       - rm -rf /tmp/notation $HOME/.docker/config.json
 
   - name: notation-sign-jobservice
-    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:1837c85a13e06ab2fc739e4c760df9dd630ad8d97b8951e8f08c0abcf682862d"
+    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:4d6c7ac4a8be8b8dc63717c39edcd930500bef455599a97135267518492793bf"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-jobservice:${CI_COMMIT_TAG}"
       NOTATION_KEY:
@@ -320,7 +320,7 @@ steps:
       - rm -rf /tmp/notation $HOME/.docker/config.json
 
   - name: notation-sign-registryctl
-    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:1837c85a13e06ab2fc739e4c760df9dd630ad8d97b8951e8f08c0abcf682862d"
+    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:4d6c7ac4a8be8b8dc63717c39edcd930500bef455599a97135267518492793bf"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-registryctl:${CI_COMMIT_TAG}"
       NOTATION_KEY:
@@ -344,7 +344,7 @@ steps:
       - rm -rf /tmp/notation $HOME/.docker/config.json
 
   - name: notation-sign-exporter
-    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:1837c85a13e06ab2fc739e4c760df9dd630ad8d97b8951e8f08c0abcf682862d"
+    image: "dhi.io/notation:1.3.2-debian13-dev@sha256:4d6c7ac4a8be8b8dc63717c39edcd930500bef455599a97135267518492793bf"
     environment:
       IMAGE_REF: "harbor.m0sh1.cc/apps/harbor-exporter:${CI_COMMIT_TAG}"
       NOTATION_KEY:
