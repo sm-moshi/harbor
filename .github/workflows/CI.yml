@@ -51,7 +51,7 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.25
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6
         with:
            go-version: 1.25.7
         id: go
@@ -113,7 +113,7 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6
         with:
           go-version: 1.23.2
         id: go
@@ -159,7 +159,7 @@ jobs:
           bash ./tests/showtime.sh ./tests/ci/api_run.sh DB $IP
           df -h
       - name: upload_logs
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         if: always()
         with:
           name: db-api-harbor-logs.tar.gz
@@ -174,7 +174,7 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6
         with:
           go-version: 1.23.2
         id: go
@@ -221,7 +221,7 @@ jobs:
           df -h
       - name: upload_logs
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: proxy-api-harbor-logs.tar.gz
           path: /home/ubuntu/_work/harbor/harbor/src/github.com/goharbor/harbor/integration_logs.tar.gz
@@ -235,7 +235,7 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6
         with:
           go-version: 1.23.2
         id: go
@@ -280,7 +280,7 @@ jobs:
           df -h
       - name: upload_logs
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
         with:
           name: ldap-api-harbor-logs.tar.gz
           path: /home/ubuntu/_work/harbor/harbor/src/github.com/goharbor/harbor/integration_logs.tar.gz
@@ -294,7 +294,7 @@ jobs:
     timeout-minutes: 100
     steps:
       - name: Set up Go 1.23
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@4b73464bb391d4059bd26b0524d20df3927bd417 # v6
         with:
           go-version: 1.23.2
         id: go
