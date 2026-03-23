@@ -713,7 +713,7 @@ registry:
   controller:
     image:
       repository: goharbor/harbor-registryctl
-      tag: v2.11.0
+      tag: v2.15.0
     # resources:
     #  requests:
     #    memory: 256Mi
