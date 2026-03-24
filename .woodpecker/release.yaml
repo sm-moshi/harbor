@@ -18,7 +18,7 @@ when:
 steps:
   # ── Build & push ─────────────────────────────────────────────
   - name: build-core
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx@sha256:14dd9d96a16fc83695c43049268c3c8e6794d757c5db008c328afe84ea126736
     settings:
       registry: harbor.m0sh1.cc
       repo: harbor.m0sh1.cc/apps/harbor-core
@@ -47,7 +47,7 @@ steps:
       cache_to: "type=registry,ref=harbor.m0sh1.cc/cache/harbor-core:buildcache,mode=max,ignore-error=true"
 
   - name: build-jobservice
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx@sha256:14dd9d96a16fc83695c43049268c3c8e6794d757c5db008c328afe84ea126736
     settings:
       registry: harbor.m0sh1.cc
       repo: harbor.m0sh1.cc/apps/harbor-jobservice
@@ -76,7 +76,7 @@ steps:
       cache_to: "type=registry,ref=harbor.m0sh1.cc/cache/harbor-jobservice:buildcache,mode=max,ignore-error=true"
 
   - name: build-registryctl
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx@sha256:14dd9d96a16fc83695c43049268c3c8e6794d757c5db008c328afe84ea126736
     settings:
       registry: harbor.m0sh1.cc
       repo: harbor.m0sh1.cc/apps/harbor-registryctl
@@ -105,7 +105,7 @@ steps:
       cache_to: "type=registry,ref=harbor.m0sh1.cc/cache/harbor-registryctl:buildcache,mode=max,ignore-error=true"
 
   - name: build-exporter
-    image: woodpeckerci/plugin-docker-buildx
+    image: woodpeckerci/plugin-docker-buildx@sha256:14dd9d96a16fc83695c43049268c3c8e6794d757c5db008c328afe84ea126736
     settings:
       registry: harbor.m0sh1.cc
       repo: harbor.m0sh1.cc/apps/harbor-exporter
