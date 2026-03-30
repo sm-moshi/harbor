@@ -1,4 +1,4 @@
-FROM node:16.10.0 as builder
+FROM node:16.10.0@sha256:543c034446e58fb3991842e22db7a404f5feb1050cf6126cb551e03cae0e7ac1 as builder
 
 WORKDIR /build_dir
 
@@ -16,7 +16,7 @@ RUN python -c 'import sys, yaml, json; y=yaml.load(sys.stdin.read()); print json
 RUN cd app-swagger-ui && npm install --unsafe-perm
 RUN cd app-swagger-ui && npm run build
 
-FROM nginx:1.17
+FROM nginx:1.29@sha256:7150b3a39203cb5bee612ff4a9d18774f8c7caf6399d6e8985e97e28eb751c18
 
 
 
