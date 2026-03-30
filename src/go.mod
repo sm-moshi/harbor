@@ -39,7 +39,7 @@ require (
 	github.com/gorilla/mux v1.8.1
 	github.com/graph-gophers/dataloader v5.0.0+incompatible
 	github.com/jackc/pgconn v1.14.3
-	github.com/jackc/pgx/v4 v4.18.3
+	github.com/jackc/pgx/v5 v5.9.1
 	github.com/jpillora/backoff v1.0.0
 	github.com/modelpack/model-spec v0.0.7
 	github.com/ncw/swift v1.0.49 // indirect
