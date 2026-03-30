@@ -3,7 +3,7 @@
 #
 # Cross-compilation: builder runs on BUILDPLATFORM (native speed),
 # Go cross-compiles to TARGETARCH. Only the runtime stage uses QEMU.
-ARG GO_VERSION=1.25.7@sha256:5a79b94c34c299ac0361fbb7c7fca6dc552e166b42341050323fa3ab137d7be9
+ARG GO_VERSION=1.26.1@sha256:595c7847cff97c9a9e76f015083c481d26078f961c9c8dca3923132f51fe12f1
 
 FROM --platform=$BUILDPLATFORM golang:${GO_VERSION} AS builder
 ARG GITCOMMIT=unknown
