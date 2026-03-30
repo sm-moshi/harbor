@@ -3,7 +3,7 @@ module github.com/goharbor/harbor/src
 go 1.25.7
 
 require (
-	github.com/FZambia/sentinel v1.1.0
+	github.com/FZambia/sentinel/v2 v2.0.1
 	github.com/Masterminds/semver/v3 v3.4.0
 	github.com/aliyun/alibaba-cloud-sdk-go v1.63.107
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
