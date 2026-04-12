@@ -8,13 +8,13 @@ require (
 	github.com/aliyun/alibaba-cloud-sdk-go v1.63.107
 	github.com/asaskevich/govalidator v0.0.0-20230301143203-a9d515a09cc2
 	github.com/aws/aws-sdk-go v1.55.8
-	github.com/beego/beego/v2 v2.3.9
+	github.com/beego/beego/v2 v2.3.10
 	github.com/beego/i18n v0.0.0-20161101132742-e9308947f407
 	github.com/bmatcuk/doublestar v1.3.4
 	github.com/casbin/casbin v1.9.1
 	github.com/cenkalti/backoff/v4 v4.3.0
 	github.com/cloudevents/sdk-go/v2 v2.16.2
-	github.com/coreos/go-oidc/v3 v3.17.0
+	github.com/coreos/go-oidc/v3 v3.18.0
 	github.com/dghubble/sling v1.4.2
 	github.com/docker/distribution v2.8.3+incompatible
 	github.com/docker/libtrust v0.0.0-20160708172513-aabc10ec26b7
@@ -32,7 +32,7 @@ require (
 	github.com/golang-jwt/jwt/v5 v5.3.1
 	github.com/golang-migrate/migrate/v4 v4.19.1
 	github.com/gomodule/redigo v2.0.0+incompatible
-	github.com/google/go-containerregistry v0.21.3
+	github.com/google/go-containerregistry v0.21.5
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/csrf v1.7.3
 	github.com/gorilla/handlers v1.5.2
@@ -66,15 +66,15 @@ require (
 	go.opentelemetry.io/otel/trace v1.43.0
 	go.pinniped.dev v0.45.0
 	go.uber.org/ratelimit v0.3.1
-	golang.org/x/crypto v0.49.0
-	golang.org/x/net v0.52.0
+	golang.org/x/crypto v0.50.0
+	golang.org/x/net v0.53.0
 	golang.org/x/oauth2 v0.36.0
 	golang.org/x/sync v0.20.0
-	golang.org/x/text v0.35.0
+	golang.org/x/text v0.36.0
 	golang.org/x/time v0.15.0
 	gopkg.in/h2non/gock.v1 v1.1.2
 	gopkg.in/yaml.v2 v2.4.0
-	helm.sh/helm/v3 v3.20.1
+	helm.sh/helm/v3 v3.20.2
 	k8s.io/api v0.35.3
 	k8s.io/apimachinery v0.35.3
 	k8s.io/client-go v0.35.3
@@ -213,7 +213,7 @@ replace (
 	github.com/gocraft/work => github.com/goharbor/work v0.5.1
 	github.com/goharbor/harbor => ../
 	github.com/gomodule/redigo => github.com/gomodule/redigo v1.9.3
-	google.golang.org/api => google.golang.org/api v0.273.0
+	google.golang.org/api => google.golang.org/api v0.275.0
 )
 
 ignore portal
